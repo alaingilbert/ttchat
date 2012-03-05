@@ -13,8 +13,8 @@ It connect itself to the Qt websocket server and send every speak packets receiv
 
 # Installation (mac)
 
-- Install the chrome extension
-- Extract the Qt application
+- Install the chrome extension (.crx file)
+- Extract the Qt application (.dmg file)
 - Execute the Qt application
 - Click on the chrome extension button. Make sure the dot is green.
 - Enjoy :)
