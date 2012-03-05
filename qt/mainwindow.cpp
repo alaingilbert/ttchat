@@ -3,8 +3,9 @@
 MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
    setWindowFlags(Qt::WindowStaysOnTopHint);
 
-   QTextEdit *txtChat = new QTextEdit;
-   QLineEdit *txtMsg = new QLineEdit;
+   txtChat = new QTextEdit;
+   txtMsg = new QLineEdit;
+   connect(txtMsg, SIGNAL(returnPressed()), this, SLOT(returnPressed()));
    myServer = new ServerExample(txtChat);
 
    txtChat->setReadOnly(true);
@@ -16,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
    setLayout(layout);
 
    txtMsg->setFocus();
+}
+
+void MainWindow::returnPressed() {
+   txtMsg->clear();
 }
 
 MainWindow::~MainWindow() {

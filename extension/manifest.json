@@ -17,7 +17,6 @@
       }
    ],
    "browser_action": {
-      "default_icon": "bullet_red.png",
-      "default_popup": "popup.html"
+      "default_icon": "bullet_red.png"
    }
 }

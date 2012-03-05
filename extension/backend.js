@@ -2,7 +2,12 @@ var turntableTab = null;
 
 var wsUri = "ws://localhost:1337";
 var websocket = null;
+var state = false;
 
+chrome.browserAction.onClicked.addListener(function(tab) {
+   if (state) { stopWebsocket(); }
+   else       { initWebsocket(); }
+});
 
 chrome.extension.onConnect.addListener(function (port) {
    port.onMessage.addListener(function (data) {
@@ -31,9 +36,11 @@ function initWebsocket() {
       websocket = new WebSocket(wsUri);
       websocket.onopen = function (evt) {
          chrome.browserAction.setIcon({ path: 'bullet_green.png' })
+         state = true;
       };
       websocket.onclose = function (evt) {
          chrome.browserAction.setIcon({ path: 'bullet_red.png' })
+         state = false;
       };
       websocket.onmessage = function (evt) {
          console.log( evt.data );
@@ -43,6 +50,7 @@ function initWebsocket() {
       };
    } catch (exception) {
       chrome.browserAction.setIcon({ path: 'bullet_red.png' })
+      state = false;
       console.log('ERROR: ' + exception);
    }
 }
@@ -51,6 +59,7 @@ function stopWebsocket() {
    if (websocket) {
       websocket.close();
       chrome.browserAction.setIcon({ path: 'bullet_red.png' })
+      state = false;
    }
 }
 

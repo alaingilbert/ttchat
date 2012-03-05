@@ -12,7 +12,7 @@ document.body.appendChild(data_gatherer);
 document.body.appendChild(data_receiver);
 
 var receiverEvent = document.createEvent('Event');
-receiverEvent.initEvent('myReceiverEvent', true, true)
+receiverEvent.initEvent('myReceiverEvent', true, true);
 
 // Communicate with the extension
 var port = chrome.extension.connect();
