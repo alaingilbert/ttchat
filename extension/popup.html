@@ -1,0 +1,26 @@
+<html>
+<head>
+   <link rel="stylesheet" media="screen" type="text/css" href="reset.css" />
+   <script>
+   function initWebsocket() {
+      chrome.extension.sendRequest({ action: 'initWebsocket' });
+   }
+
+   function stopWebsocket() {
+      chrome.extension.sendRequest({ action: 'stopWebsocket' });
+   }
+
+   function checkSocket() {
+      chrome.extension.sendRequest({ action: 'checkSocket' }, function (data) {
+         document.getElementById('state').innerHTML = data;
+      });
+   }
+   </script>
+</head>
+<body>
+   <button onClick="initWebsocket();">Connect</button>
+   <button onClick="stopWebsocket();">Disconnect</button>
+   <button onClick="checkSocket();">State</button>
+   <span id="state">CLOSED</span>
+</body>
+</html>
