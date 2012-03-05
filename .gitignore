@@ -5,3 +5,5 @@ qt/Makefile
 qt/moc_*
 qt/ttchat.app/
 qt/*.pro.user
+/extension.crx
+/extension.pem
