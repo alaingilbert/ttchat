@@ -1,5 +1,9 @@
 QT += network
 
+win32 {
+QMAKE_LFLAGS += -static-libgcc
+}
+
 SOURCES += \
     main.cpp \
     QWsServer.cpp \

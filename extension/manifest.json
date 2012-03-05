@@ -2,7 +2,6 @@
    "name":            "ttchat",
    "version":         "0.0.0",
    "description":     "This extension send data in a socket!",
-   "options_page":    "options.html",
    "background_page": "background.html",
    "permissions": [
       "tabs"
