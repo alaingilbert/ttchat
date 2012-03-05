@@ -13,9 +13,10 @@ class ServerExample : public QObject
 	Q_OBJECT
 
 public:
-    ServerExample(QTextEdit *txtChat);
-    ~ServerExample();
+   ServerExample(QTextEdit *txtChat);
+   ~ServerExample();
    QTextEdit *txtChat;
+   void send(QString msg);
 
 public slots:
 	void onClientConnection();

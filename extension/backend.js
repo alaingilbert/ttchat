@@ -26,6 +26,11 @@ function onRequest(request, sender, callback) {
       case 'initWebsocket': initWebsocket();         break;
       case 'stopWebsocket': stopWebsocket();         break;
       case 'checkSocket':   callback(checkSocket()); break;
+      case 'setTurntableTab':
+         turntableTab = sender.tab.id;
+         break;
+      case 'speak':
+         break
    }
 }
 
@@ -43,7 +48,10 @@ function initWebsocket() {
          state = false;
       };
       websocket.onmessage = function (evt) {
-         console.log( evt.data );
+         var msg = evt.data || '';
+         chrome.tabs.sendRequest(turntableTab, { action: 'speak', msg: msg }, function (err, res) {
+            console.log(err, res);
+         });
       };
       websocket.onerror = function (evt) {
          console.log('ERROR: ' + evt.data);

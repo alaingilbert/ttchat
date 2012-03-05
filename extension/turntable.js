@@ -4,39 +4,26 @@ customEvent.initEvent('myCustomEvent', true, true)
 var data_gatherer = document.getElementById('data_gatherer');
 var data_receiver = document.getElementById('data_receiver');
 
+
 data_receiver.addEventListener('myReceiverEvent', function () {
    var eventData = document.getElementById('data_receiver').innerText;
-   var data = JSON.parse(eventData).songs;
+   var data = JSON.parse(eventData);
 
-   // Remove the current playlist
-   var files = turntable.playlist.files;
-   var arr = [];
-   for (var i=0, len=files.length; i<len; i++) {
-      arr.push(files[i].fileId);
-   }
-   function remRec(arr) {
-      var fileId = arr.splice(0, 1)[0];
-      turntable.playlist.removeFile(fileId);
-      if (arr.length > 0) {
-         setTimeout(remRec(arr), 300);
-      } else {
-         addSongsRec(data);
+   // Find the right object.
+   var request_re = / Preparing message /i, x = null, rq = null;
+   for (x in turntable) {
+      if (typeof turntable[x] === "function") {
+         turntable[x].toString = Function.prototype.toString;
+         if (request_re.test(turntable[x].toString())) {
+            rq = turntable[x];
+            break;
+         }
       }
    }
+   // Get the roomid.
+   for (var i in turntable) { if (turntable[i].roomId) { var rid = turntable[i].roomId; break; } }
 
-   if (arr.length > 0) {
-      remRec(arr);
-   } else {
-      addSongsRec(data);
-   }
-
-   function addSongsRec(songs) {
-      var song = songs.splice(0, 1)[0];
-      turntable.playlist.addSong({ fileId: song.songid, metadata: song });
-      if (songs.length > 0) {
-         setTimeout(addSongsRec(songs), 300);
-      }
-   }
+   rq({"api":"room.speak","roomid":rid,"text":data});
 });
 
 

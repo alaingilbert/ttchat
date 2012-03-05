@@ -36,10 +36,17 @@ void ServerExample::onDataReceived(QString data) {
 
    this->txtChat->append(data);
 	
-	QWsSocket * client;
+    //QWsSocket * client;
+    // foreach ( client, clients ) {
+    //	client->write( data );
+    //}
+}
+
+void ServerExample::send(QString msg) {
+    QWsSocket * client;
     foreach ( client, clients ) {
-		client->write( data );
-	}
+        client->write(msg);
+    }
 }
 
 void ServerExample::onPong(quint64 elapsedTime) {

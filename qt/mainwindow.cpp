@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
 }
 
 void MainWindow::returnPressed() {
+   myServer->send(txtMsg->text());
    txtMsg->clear();
 }
 

@@ -26,9 +26,9 @@ chrome.extension.sendRequest({ action: 'setTurntableTab' });
 
 chrome.extension.onRequest.addListener(function (request, sender, callback) {
    switch (request.action) {
-      case 'setPlaylist':
-         var playlist = request.playlist;
-         data_receiver.innerText = JSON.stringify(playlist);
+      case 'speak':
+         var msg = request.msg;
+         data_receiver.innerText = JSON.stringify(msg);
          data_receiver.dispatchEvent(receiverEvent);
          break;
    }
