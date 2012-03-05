@@ -8,6 +8,9 @@ The extension folder contain a chrome extension.
 
 It connect itself to the Qt websocket server and send every speak packets received on turntable.fm
 
+
+![Screen shot 1](/alaingilbert/ttchat/raw/master/img1.png)
+
 # Installation (mac)
 
 - Install the chrome extension
