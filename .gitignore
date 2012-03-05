@@ -1,0 +1,7 @@
+.DS_Store
+*.swp
+*.o
+qt/Makefile
+qt/moc_*
+qt/ttchat.app/
+qt/*.pro.user
