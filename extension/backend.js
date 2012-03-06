@@ -40,11 +40,11 @@ function initWebsocket() {
       WebSocket = MozWebSocket;
       websocket = new WebSocket(wsUri);
       websocket.onopen = function (evt) {
-         chrome.browserAction.setIcon({ path: 'bullet_green.png' })
+         chrome.browserAction.setIcon({ path: 'img/bullet_green.png' })
          state = true;
       };
       websocket.onclose = function (evt) {
-         chrome.browserAction.setIcon({ path: 'bullet_red.png' })
+         chrome.browserAction.setIcon({ path: 'img/bullet_red.png' })
          state = false;
       };
       websocket.onmessage = function (evt) {
@@ -57,7 +57,7 @@ function initWebsocket() {
          console.log('ERROR: ' + evt.data);
       };
    } catch (exception) {
-      chrome.browserAction.setIcon({ path: 'bullet_red.png' })
+      chrome.browserAction.setIcon({ path: 'img/bullet_red.png' })
       state = false;
       console.log('ERROR: ' + exception);
    }
@@ -66,7 +66,7 @@ function initWebsocket() {
 function stopWebsocket() {
    if (websocket) {
       websocket.close();
-      chrome.browserAction.setIcon({ path: 'bullet_red.png' })
+      chrome.browserAction.setIcon({ path: 'img/bullet_red.png' })
       state = false;
    }
 }

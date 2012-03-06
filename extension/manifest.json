@@ -16,6 +16,6 @@
       }
    ],
    "browser_action": {
-      "default_icon": "bullet_red.png"
+      "default_icon": "img/bullet_red.png"
    }
 }
