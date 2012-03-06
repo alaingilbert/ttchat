@@ -13,6 +13,7 @@ It connect itself to the Qt websocket server and send every speak packets receiv
 
 ## Installation (Windows)
 
+- Download these files https://github.com/alaingilbert/ttchat/tree/master/releases/v0.0.0/windows
 - Install the chrome extension (.crx file)
   - If you were already on turntable.fm, refresh the page.
 - Execute the Qt application (.exe file into the zip)
@@ -21,9 +22,9 @@ It connect itself to the Qt websocket server and send every speak packets receiv
 
 ## Installation (mac)
 
+- Download these files https://github.com/alaingilbert/ttchat/tree/master/releases/v0.0.0/mac
 - Install the chrome extension (.crx file)
   - If you were already on turntable.fm, refresh the page.
-- Extract the Qt application (.dmg file)
-- Execute the Qt application
+- Extract and execute the Qt application (.dmg file)
 - Click on the chrome extension button. Make sure the dot is green.
 - Enjoy :)
