@@ -11,7 +11,14 @@ It connect itself to the Qt websocket server and send every speak packets receiv
 
 ![Screen shot 1](/alaingilbert/ttchat/raw/master/img1.png)
 
-# Installation (mac)
+## Installation (Windows)
+
+- Install the chrome extension (.crx file)
+- Execute the Qt application (.exe file into the zip)
+- Click on the chrome extension button. Make sure the dot is green.
+- Enjoy :)
+
+## Installation (mac)
 
 - Install the chrome extension (.crx file)
 - Extract the Qt application (.dmg file)
