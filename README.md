@@ -1,5 +1,7 @@
 # Ttchat
 
+*** Any feedback is welcome! ***
+
 See below for easy installation on windows and mac.
 
 ![Screen shot 1](/alaingilbert/ttchat/raw/master/img1.png)
