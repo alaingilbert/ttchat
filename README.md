@@ -1,13 +1,6 @@
 # Ttchat
 
-The qt folder contain the desktop application.
-
-When executed, it start a websocket server.
-
-The extension folder contain a chrome extension.
-
-It connect itself to the Qt websocket server and send every speak packets received on turntable.fm
-
+See below for easy installation on windows and mac.
 
 ![Screen shot 1](/alaingilbert/ttchat/raw/master/img1.png)
 
@@ -28,3 +21,14 @@ It connect itself to the Qt websocket server and send every speak packets receiv
 - Extract and execute the Qt application (.dmg file)
 - Click on the chrome extension button. Make sure the dot is green.
 - Enjoy :)
+
+
+# Concept
+
+The qt folder contain the desktop application.
+
+When executed, it start a websocket server.
+
+The extension folder contain a chrome extension.
+
+It connect itself to the Qt websocket server and send every speak packets received on turntable.fm
